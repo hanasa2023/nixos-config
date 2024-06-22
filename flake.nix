@@ -2,6 +2,7 @@
   description = "A simple NixOS flake";
 
   inputs = {
+    nixos.url = "https://mirrors.ustc.edu.cn/nix-channels/nixos-24.05/nixexprs.tar.xz";
 	nixpkgs.url = "https://mirrors.ustc.edu.cn/nix-channels/nixpkgs-unstable/nixexprs.tar.xz";
   	nixos-wsl.url = "github:nix-community/nixos-wsl";
   	neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
