@@ -7,11 +7,9 @@ set -U fish_greeting
 alias cl="clear"
 alias sf="source ~/.config/fish/config.fish"
 alias ug="sudo nixos-rebuild switch"
-alias lg="nix-env --list-generations"
-alias ph="nix profile history"
-alias rb="nix-env --rollback"
-alias dg="nix-env --delete-generations"
-alias lp="ls -l ~/.local/state/nix/profiles/profile*"
+alias lg="sudo nix-env --list-generations --profile /nix/var/nix/profiles/system"
+alias ph="nix profile history --profile /nix/var/nix/profiles/system"
+alias lp="ls -al /nix/var/nix/profiles/"
 alias nv="nvim"
 alias mk="mkdir"
 alias ex="exit"
@@ -33,6 +31,14 @@ end
 function cv
     cd ~/VueProjects
     npm create vue@latest
+end
+
+function rb
+    sudo nixos-rebuild switch --rollback=$argv
+end
+
+function dg
+    sudo nix-collect-garbage --delete-older-than $argv
 end
 
 export NIX_LD=$(nix eval --impure --raw --expr 'let pkgs = import <nixpkgs> {}; NIX_LD = pkgs.lib.fileContents "${pkgs.stdenv.cc}/nix-support/dynamic-linker"; in NIX_LD')

@@ -9,7 +9,6 @@
 { config, lib, pkgs, inputs, ... }:
 
 {
-  nix.settings.access-tokens = [ "github.com=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" ];
   nix.settings.substituters = lib.mkForce [ "https://mirrors.ustc.edu.cn/nix-channels/store" ];
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
