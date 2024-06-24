@@ -32,10 +32,6 @@
         source = ./omf;
         recursive = true;
       };
-      ".config/go-musicfox" = {
-        source = ./go-musicfox;
-        recursive = true;
-      };
       ".config/termusic" = {
         source = ./termusic;
         recursive = true;

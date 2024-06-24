@@ -58,6 +58,7 @@
     pavucontrol
     unzip
     cargo
+    nil
     inputs.neovim-nightly-overlay.packages.${pkgs.system}.default
   ];
 
