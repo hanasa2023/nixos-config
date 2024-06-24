@@ -1,0 +1,90 @@
+[manager]
+ratio = [1, 4, 3]
+sort_by = "natural"
+sort_dir_first = true
+
+[preview]
+tab_size = 2
+image_filter = "lanczos3"
+image_quality = 75
+max_width = 600
+max_height = 600
+sixel_fraction = 15
+
+[opener]
+edit = [{ run = 'nvim "$@"', block = true }]
+open = [
+  { run = 'xdg-open "$@"', desc = "Open", for = "linux" },
+  { run = 'qimgv "$@"', desc = "Open with qimgv", for = "linux" },
+  { run = 'start "" "%1"', orphan = true, desc = "Open", for = "windows" },
+]
+reveal = [
+  { run = '''exiftool "$1"; echo "Press enter to exit"; read''', block = true, desc = "Show EXIF", for = "unix" },
+  { run = 'explorer /select, "%1"', orphan = true, desc = "Reveal", for = "windows" },
+]
+extract = [
+  { run = 'ouch decompress "$1"', desc = "Extract here(ouch)", for = "unix" },
+  { run = 'unar "%1"', desc = "Extract here", for = "windows" },
+]
+play = [{ run = 'mpv "%1"', orphan = true, for = "windows" }]
+
+[open]
+prepend_rules = [
+  { name = "*/", use = [
+    "edit",
+    "open",
+    "reveal",
+  ] },
+
+  { mime = "text/*", use = [
+    "edit",
+    "reveal",
+  ] },
+  { mime = "image/*", use = [
+    "open",
+    "reveal",
+  ] },
+  { name = "*.json", use = "edit" },
+  { name = "*.html", use = "edit" },
+  { name = "*.vue", use = "edit" },
+  { name = "*.kt", use = "edit" },
+  { name = "*.kts", use = "edit" },
+  { name = "*.py", use = "edit" },
+  { name = "*.ts", use = "edit" },
+  { name = "*.js", use = "edit" },
+  { name = "*.css", use = "edit" },
+  { name = "*.lua", use = "edit" },
+  { name = "*.toml", use = "edit" },
+  { mime = "*", use = [
+    "open",
+    "reveal",
+  ] },
+]
+
+[plugin]
+prepend_previewers = [
+  # { name = "*", cond = "!mime", run = "mime", multi = true, prio = "high" },
+  # JSON
+  { mime = "application/json", run = "json" },
+  # Image
+  { mime = "image/vnd.djvu", run = "noop" },
+  { mime = "image/*", run = "image" },
+  # Video
+  { mime = "video/*", run = "video" },
+  # PDF
+  { mime = "application/pdf", run = "pdf" },
+  { name = "*.md", run = "glow" },
+  { mime = "text/csv", run = "miller" },
+  # Archive previewer
+  { mime = "application/*zip", run = "ouch" },
+  { mime = "application/x-tar", run = "ouch" },
+  { mime = "application/x-bzip2", run = "ouch" },
+  { mime = "application/x-7z-compressed", run = "ouch" },
+  { mime = "application/x-rar", run = "ouch" },
+  { mime = "application/x-xz", run = "ouch" },
+  { mime = "application/x-bittorrent", run = "torrent-preview" },
+
+  { mime = "audio/*", run = "exifaudio" },
+  # Fallback
+  # { name = "*", run = "file" },
+]
