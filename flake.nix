@@ -24,7 +24,7 @@
           wsl.enable = true;
           wsl.defaultUser = "hanasaki";
           wsl.wslConf.user.default = "hanasaki";
-
+          wsl.wslConf.network.generateHosts = false;
         }
         home-manager.nixosModules.home-manager
         {

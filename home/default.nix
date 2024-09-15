@@ -1,4 +1,4 @@
-{ config, pkgs, inputs, ... }:
+{ config, pkgs, ... }:
 
 {
 
@@ -7,7 +7,7 @@
     username = "hanasaki";
     homeDirectory = "/home/hanasaki";
 
-    stateVersion = "24.05"; # Please read the comment before changing.
+    enableNixpkgsReleaseCheck = false;
 
     packages = with pkgs; [
       nodejs_22
@@ -16,6 +16,7 @@
       lunarvim
       python3
       uv
+      pipx
     ];
 
     file = {
@@ -49,7 +50,11 @@
 
     sessionVariables = {
       # EDITOR = "emacs";
+      PATH = "~/.local/bin";
     };
+
+
+    stateVersion = "24.05"; # Please read the comment before changing.
 
   };
   programs.git = {

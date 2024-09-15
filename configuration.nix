@@ -63,9 +63,16 @@
   ];
 
   environment.variables = {
-    RUSTUP_DIST_SERVER="https://rsproxy.cn";
-    RUSTUP_UPDATE_ROOT="https://rsproxy.cn/rustup";
+    RUSTUP_DIST_SERVER = "https://rsproxy.cn";
+    RUSTUP_UPDATE_ROOT = "https://rsproxy.cn/rustup";
   };
+
+  networking.extraHosts = ''
+    185.199.108.133 raw.githubusercontent.com
+    185.199.109.133 raw.githubusercontent.com
+    185.199.110.133 raw.githubusercontent.com
+    185.199.111.133 raw.githubusercontent.com
+  '';
 
 
   # Automatic Garbage Collection
