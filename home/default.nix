@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, ... }:
 
 {
 
@@ -11,8 +11,11 @@
 
     packages = with pkgs; [
       nodejs_22
-      go-musicfox
-      termusic
+      zed-editor
+      neovim
+      lunarvim
+      python3
+      uv
     ];
 
     file = {
@@ -28,15 +31,20 @@
         source = ./fish;
         recursive = true;
       };
-      ".config/omf" = {
-        source = ./omf;
-        recursive = true;
-      };
-      ".config/termusic" = {
-        source = ./termusic;
-        recursive = true;
-      };
+      #".config/omf" = {
+      #  source = ./omf;
+      #  recursive = true;
+      #};
       ".npmrc".source = ./.npmrc;
+      ".config/starship.toml".source = ./starship.toml;
+      ".config/lvim" = {
+        source = ./lvim;
+        recursive = true;
+      };
+      ".cargo" = {
+        source = ./.cargo;
+        recursive = true;
+      };
     };
 
     sessionVariables = {
@@ -46,7 +54,7 @@
   };
   programs.git = {
     enable = true;
-    userName = "hanasa2023";
+    userName = "hanasaki";
     userEmail = "hanasakayui2022@gmail.com";
   };
   programs.home-manager.enable = true;

@@ -1,5 +1,6 @@
 if status is-interactive
     # Commands to run in interactive sessions can go here
+    cd ~
 end
 
 set -U fish_greeting
@@ -11,6 +12,7 @@ alias lg="sudo nix-env --list-generations --profile /nix/var/nix/profiles/system
 alias ph="nix profile history --profile /nix/var/nix/profiles/system"
 alias lp="ls -al /nix/var/nix/profiles/"
 alias nv="nvim"
+alias lv="lvim"
 alias mk="mkdir"
 alias ex="exit"
 alias gc="nix-collect-garbage -d"
@@ -42,3 +44,5 @@ function dg
 end
 
 export NIX_LD=$(nix eval --impure --raw --expr 'let pkgs = import <nixpkgs> {}; NIX_LD = pkgs.lib.fileContents "${pkgs.stdenv.cc}/nix-support/dynamic-linker"; in NIX_LD')
+
+

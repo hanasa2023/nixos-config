@@ -9,24 +9,21 @@
 { config, lib, pkgs, inputs, ... }:
 
 {
-  nix.settings.substituters = lib.mkForce [ "https://mirrors.ustc.edu.cn/nix-channels/store" ];
+  nix.settings.substituters = lib.mkForce [ "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store" ];
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
-  # Audio
-  # boot.kernelPackages = pkgs.linuxPackagesFor pkgs.linux_latest;
-
-  # sound.enable = true;
-  # nixpkgs.config.pulseaudio = true;
-  # hardware.pulseaudio.enable = true;
-  # hardware.pulseaudio.extraConfig = "load-module module-combine-sink";
-  # hardware.pulseaudio.package = pkgs.pulseaudioFull;
-  # nixpkgs.config.allowUnfree = true;
-  # hardware.enableAllFirmware = true;
-  # boot.extraModprobeConfig = ''
-  #   options snd-intel-dspcfg dsp_driver=1
-  # '';
   programs.fish = {
     enable = true;
+  };
+
+  programs.starship = {
+    enable = true;
+    settings = {
+      add_newline = true;
+      aws.disabled = true;
+      gcloud.disabled = true;
+      line_break.disabled = true;
+    };
   };
 
   users.users.hanasaki = {
@@ -34,7 +31,7 @@
     home = "/home/hanasaki";
     shell = pkgs.fish;
     description = "Hanasaki Foobar";
-    extraGroups = [ "wheel" "networkmanager" "audio" ];
+    extraGroups = [ "wheel" "networkmanager" ];
   };
 
 
@@ -43,28 +40,32 @@
     wget
     fastfetch
     git
-    fish
-    oh-my-fish
+    #oh-my-fish
     yazi
     lazygit
     fd
     ripgrep
+    jq
+    which
+    zstd
+    tree
+    glow
     fzf
-    openssh
     gcc
-    alsa-utils
-    sof-firmware
-    pulseaudioFull
-    pavucontrol
     unzip
-    cargo
+    rustup
     nil
-    inputs.neovim-nightly-overlay.packages.${pkgs.system}.default
+    #inputs.neovim-nightly-overlay.packages.${pkgs.system}.default
   ];
 
   programs.nix-ld.enable = true;
   programs.nix-ld.libraries = with pkgs; [
   ];
+
+  environment.variables = {
+    RUSTUP_DIST_SERVER="https://rsproxy.cn";
+    RUSTUP_UPDATE_ROOT="https://rsproxy.cn/rustup";
+  };
 
 
   # Automatic Garbage Collection
