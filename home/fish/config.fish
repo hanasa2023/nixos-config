@@ -17,6 +17,7 @@ alias ex="exit"
 alias gc="nix-collect-garbage -d"
 alias lg="lazygit"
 alias yy="yazi"
+alias z="zellij"
 
 # function yy
 #     set tmp (mktemp -t "yazi-cwd.XXXXXX")

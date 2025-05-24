@@ -16,6 +16,7 @@
       mediainfo
       yazi
       duckdb
+      zellij
     ];
 
     file = {
@@ -33,6 +34,10 @@
       };
       ".config/yazi" = {
         source = ./yazi;
+        recursive = true;
+      };
+      ".config/zellij" = {
+        source = ./zellij;
         recursive = true;
       };
       ".npmrc".source = ./.npmrc;
