@@ -1,0 +1,20 @@
+[manager]
+prepend_keymap = [
+  { on = [
+    "g",
+    "t",
+  ], run = "cd $HOME/TypescriptProjects", desc = "Cd to typescript projects" },
+  { on = [
+    "g",
+    "r",
+  ], run = "cd $HOME/RustProjects", desc = "Cd to rust projects" },
+  { on = [
+    "g",
+    "o",
+  ], run = "plugin duckdb -open", desc = "open with duckdb" },
+  { on = [
+    "g",
+    "ui",
+  ], run = "plugin duckdb -open", desc = "open with duckdb ui" },
+]
+append_keymap = []
