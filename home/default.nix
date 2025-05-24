@@ -7,16 +7,7 @@
 
     enableNixpkgsReleaseCheck = false;
 
-    packages = with pkgs; [
-      nodejs_22
-      python3
-      uv
-      yarn
-      cargo
-      rust-analyzer
-      clippy
-      gcc
-    ];
+    packages = with pkgs; [ ];
 
     file = {
       ".config/nvim" = {

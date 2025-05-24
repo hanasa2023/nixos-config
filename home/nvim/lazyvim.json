@@ -18,6 +18,7 @@
     "lazyvim.plugins.extras.lang.vue",
     "lazyvim.plugins.extras.lang.yaml",
     "lazyvim.plugins.extras.lang.nix",
+    "lazyvim.plugins.extras.lang.rust",
     "lazyvim.plugins.extras.lsp.neoconf",
     "lazyvim.plugins.extras.test.core",
     "lazyvim.plugins.extras.ui.mini-animate",
@@ -29,4 +30,3 @@
   },
   "version": 7
 }
-
