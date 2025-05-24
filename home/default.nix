@@ -36,6 +36,7 @@
       jq
       glow
       tokei
+      xclip
     ];
 
     file = {
