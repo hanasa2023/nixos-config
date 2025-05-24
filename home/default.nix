@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, ... }:
 
 {
   home = {
@@ -17,6 +17,7 @@
       yazi
       duckdb
       zellij
+      inputs.zjstatus.packages.${pkgs.system}.default
     ];
 
     file = {
