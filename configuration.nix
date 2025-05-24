@@ -32,11 +32,12 @@
     # git
     git
     lazygit
-    # rust
-    cargo
-    rust-analyzer
-    clippy
-    gcc
+    zellij
+    # inputs.zjstatus.packages.${pkgs.system}.default
+    yazi
+    ouch
+    duckdb
+    mediainfo
     wget
     fastfetch
     tree
@@ -48,6 +49,7 @@
     unzip
     jq
     glow
+    tokei
   ];
 
   environment.variables = {

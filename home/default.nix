@@ -12,12 +12,10 @@
       python3
       uv
       yarn
-      ouch
-      mediainfo
-      yazi
-      duckdb
-      zellij
-      inputs.zjstatus.packages.${pkgs.system}.default
+      cargo
+      rust-analyzer
+      clippy
+      gcc
     ];
 
     file = {

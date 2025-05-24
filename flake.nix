@@ -31,7 +31,7 @@
         {
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
-          home-manager.users.hanasaki = import ./home;
+          home-manager.extraSpecialArgs = { inherit inputs; };
         }
       ];
     };
