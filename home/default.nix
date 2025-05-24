@@ -7,7 +7,36 @@
 
     enableNixpkgsReleaseCheck = false;
 
-    packages = with pkgs; [ ];
+    packages = with pkgs; [
+      nodejs_22
+      python3
+      uv
+      yarn
+      cargo
+      rust-analyzer
+      clippy
+      gcc
+      dotnet-sdk_9
+      neovim
+      lazygit
+      zellij
+      # inputs.zjstatus.packages.${pkgs.system}.default
+      yazi
+      ouch
+      duckdb
+      mediainfo
+      fastfetch
+      tree
+      fd
+      ripgrep
+      fzf
+      which
+      zstd
+      unzip
+      jq
+      glow
+      tokei
+    ];
 
     file = {
       ".config/nvim" = {
@@ -42,5 +71,15 @@
     enable = true;
     userName = "hanasaki";
     userEmail = "hanasakayui2022@gmail.com";
+  };
+  programs.direnv = {
+    enable = true;
+    enableFishIntegration = true;
+    enableBashIntegration = true;
+    nix-direnv = {
+      enable = true;
+      package = pkgs.nix-direnv;
+    };
+    silent = true;
   };
 }

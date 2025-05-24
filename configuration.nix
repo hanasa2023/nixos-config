@@ -25,41 +25,7 @@
     extraGroups = [ "wheel" "networkmanager" ];
   };
 
-  environment.systemPackages = with pkgs; [
-    nodejs_22
-    python3
-    uv
-    yarn
-    cargo
-    rust-analyzer
-    clippy
-    gcc
-    dotnet-sdk_9
-    # vim
-    vim
-    neovim
-    # git
-    git
-    lazygit
-    zellij
-    # inputs.zjstatus.packages.${pkgs.system}.default
-    yazi
-    ouch
-    duckdb
-    mediainfo
-    wget
-    fastfetch
-    tree
-    fd
-    ripgrep
-    fzf
-    which
-    zstd
-    unzip
-    jq
-    glow
-    tokei
-  ];
+  environment.systemPackages = with pkgs; [ vim git wget ];
 
   environment.variables = {
     RUSTUP_DIST_SERVER = "https://rsproxy.cn";
