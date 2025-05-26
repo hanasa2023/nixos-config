@@ -4,6 +4,7 @@
   imports = [
     ../../home/core.nix
 
+    ../../home/niri
     ../../home/programs
     ../../home/fish
     ../../home/nvim

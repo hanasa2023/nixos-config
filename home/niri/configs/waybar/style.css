@@ -1,0 +1,184 @@
+@import "mocha.css";
+
+* {
+  font-family: "Maple Mono";
+  font-size: 17px;
+  min-height: 0;
+}
+
+#waybar {
+  background: transparent;
+  color: @Maroon;
+  margin: 5px 5px;
+}
+
+#workspaces {
+  border-radius: 1rem;
+  margin: 5px;
+  background-color: @surface0;
+  margin-left: 1rem;
+}
+#workspaces button {
+  color: @text;
+  padding: 0 0.5rem;
+  background-color: @surface0;
+  margin: 0.25rem;
+}
+
+#workspaces button.empty {
+  color: @overlay0;
+}
+
+#workspaces button.visible {
+  color: @sky;
+}
+
+#workspaces button.active {
+  color: @green;
+}
+
+#workspaces button.urgent {
+  background-color: @red;
+  color: @text;
+  border-radius: 1rem;
+}
+
+#workspaces button:hover {
+  color: @sapphire;
+  border-radius: 1rem;
+}
+
+#window,
+#custom-music,
+#custom-wallchange,
+#idle_inhibitor,
+#tray,
+#backlight,
+#clock,
+#battery,
+#pulseaudio,
+#language,
+#cpu,
+#memory,
+#custom-gpuinfo,
+#network,
+#custom-icon,
+#custom-lock,
+#custom-power {
+  background-color: @surface0;
+  padding: 0.5rem 1rem;
+  margin: 5px 0;
+}
+
+#window {
+  color: @lavender;
+  border-radius: 1rem;
+}
+
+window#waybar.empty #window {
+  background-color: transparent;
+}
+
+#custom-icon {
+  color: @sapphire;
+  border-radius: 1rem;
+  margin-left: 1rem;
+}
+
+#custom-wallchange {
+  color: @red;
+  border-radius: 1rem;
+  margin-right: 0.5rem;
+}
+
+#idle_inhibitor {
+  color: @sapphire;
+  border-radius: 1rem;
+  margin-left: 1rem;
+}
+
+#idle_inhibitor.activated {
+  color: @green;
+}
+
+#clock {
+  color: @sky;
+  border-radius: 1rem;
+  margin-left: 1rem;
+}
+
+#battery {
+  color: @green;
+}
+
+#battery.charging {
+  color: @green;
+}
+
+#battery.warning:not(.charging) {
+  color: @red;
+}
+
+#backlight {
+  color: @yellow;
+  border-radius: 1rem 0px 0px 1rem;
+  margin-left: 1rem;
+}
+
+#battery {
+  border-radius: 0px 1rem 1rem 0px;
+}
+
+#pulseaudio {
+  color: @flamingo;
+}
+
+#language {
+  color: @peach;
+  border-radius: 0px 1rem 1rem 0px;
+}
+
+#custom-music {
+  color: @mauve;
+  border-radius: 1rem;
+}
+
+#custom-gpuinfo {
+  color: @red;
+  border-radius: 1rem 0px 0px 1rem;
+  margin-left: 1rem;
+}
+
+#cpu {
+  color: @teal;
+}
+
+#memoy {
+  color: @lavender;
+}
+
+#network {
+  color: @green;
+  border-radius: 1rem;
+  margin-left: 1rem;
+}
+
+#custom-lock {
+  background-color: @yellow;
+  color: @base;
+  border-radius: 1rem;
+  margin-left: 0.5rem;
+}
+
+#custom-power {
+  margin-right: 1rem;
+  margin-left: 0.5rem;
+  border-radius: 1rem;
+  color: @base;
+  background-color: @red;
+}
+
+#tray {
+  margin-right: 5px;
+  border-radius: 1rem;
+}

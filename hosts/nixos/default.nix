@@ -1,8 +1,11 @@
 { config, pkgs, ... }:
 
 {
-
-  imports = [ ../../modules/system.nix ./hardware-configuration.nix ];
+  imports = [
+    ../../modules/niri.nix
+    ../../modules/system.nix
+    ./hardware-configuration.nix
+  ];
 
   boot.loader = {
     systemd-boot.configurationLimit = 10;
