@@ -5,6 +5,7 @@
   imports = [ ../../modules/system.nix ./hardware-configuration.nix ];
 
   boot.loader = {
+    systemd-boot.configurationLimit = 10;
     grub = {
       enable = true;
       device = "nodev";
