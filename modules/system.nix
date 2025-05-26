@@ -75,6 +75,17 @@
     pulseaudio.enable = lib.mkForce false;
   };
 
+  fonts = {
+    packages = with pkgs; [
+      # icon fonts
+      material-design-icons
+
+      # normal fonts
+      maple-mono.NF
+      maple-mono.CN
+    ];
+  };
+
   environment.systemPackages = with pkgs; [
     vim
     git
