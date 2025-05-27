@@ -106,4 +106,9 @@
     source = ./configs/mpd;
     recursive = true;
   };
+
+  home.file.".config/cava" = {
+    source = ./configs/cava;
+    recursive = true;
+  };
 }
