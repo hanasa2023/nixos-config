@@ -6,7 +6,7 @@
     home = "/home/${username}";
     shell = pkgs.fish;
     description = "${username}";
-    extraGroups = [ "wheel" "networkmanager" ];
+    extraGroups = [ "wheel" "networkmanager" "input" "video" ];
   };
 
   programs.fish = { enable = true; };
@@ -40,6 +40,25 @@
   nixpkgs.config.allowUnfree = true;
 
   time.timeZone = "Asia/Shanghai";
+
+  i18n.inputMethod = {
+    enable = true;
+    type = "fcitx5";
+    fcitx5 = {
+      waylandFrontend = true;
+      plasma6Support = true;
+      addons = with pkgs; [
+        # for flypy chinese input method
+        rime-data
+        fcitx5-rime
+        # Jetbrains Monoble rime using configtool after installed
+        fcitx5-configtool
+        fcitx5-chinese-addons
+        # fcitx5-mozc    # japanese input method
+        fcitx5-gtk # gtk im module
+      ];
+    };
+  };
 
   # security.wrappers.mihomo-party = {
   #   owner = "root";
@@ -83,6 +102,8 @@
       # normal fonts
       maple-mono.NF
       maple-mono.CN
+
+      nerd-fonts.jetbrains-mono
     ];
   };
 
