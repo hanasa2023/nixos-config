@@ -255,6 +255,7 @@ layout {
 
 // This line starts waybar, a commonly used bar for Wayland compositors.
 spawn-at-startup "waybar"
+// spawn-at-startup "swaybg --mode fill --image ~/.config/wallpapers/card_after_training.png"
 spawn-at-startup "xwayland-satellite"
 
 environment {

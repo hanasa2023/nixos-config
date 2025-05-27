@@ -11,6 +11,7 @@
     mpc
     xwayland-satellite
     xfce.thunar
+    networkmanagerapplet
   ];
 
   programs.anyrun = {
@@ -126,4 +127,7 @@
     source = ./configs/hypr;
     recursive = true;
   };
+
+  home.file.".config/systemd/user/swaybg.service".source =
+    ./configs/swaybg/swaybg.service;
 }

@@ -1,0 +1,8 @@
+[Unit]
+PartOf=graphical-session.target
+After=graphical-session.target
+Requisite=graphical-session.target
+
+[Service]
+ExecStart=/etc/profiles/per-user/hanasaki/bin/swaybg -m fill -i "%h/.config/wallpapers/card_after_training.png"
+Restart=on-failure
