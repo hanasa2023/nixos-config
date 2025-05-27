@@ -4,6 +4,7 @@
   imports = [
     ../../home/core.nix
 
+    ../../home/wallpaper
     ../../home/niri
     ../../home/programs
     ../../home/fish

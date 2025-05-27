@@ -1,7 +1,7 @@
 { pkgs, config, anyrun, ... }:
 
 {
-  home.packages = with pkgs; [ dunst spotify waybar wlogout ];
+  home.packages = with pkgs; [ dunst spotify waybar wlogout hyprlock swaybg ];
 
   programs.anyrun = {
     enable = true;
@@ -109,6 +109,11 @@
 
   home.file.".config/cava" = {
     source = ./configs/cava;
+    recursive = true;
+  };
+
+  home.file.".config/hypr" = {
+    source = ./configs/hypr;
     recursive = true;
   };
 }
