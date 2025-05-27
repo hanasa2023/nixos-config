@@ -1,7 +1,15 @@
 { pkgs, config, anyrun, ... }:
 
 {
-  home.packages = with pkgs; [ dunst spotify waybar wlogout hyprlock swaybg ];
+  home.packages = with pkgs; [
+    dunst
+    spotify
+    waybar
+    wlogout
+    hyprlock
+    swaybg
+    mpc
+  ];
 
   programs.anyrun = {
     enable = true;
