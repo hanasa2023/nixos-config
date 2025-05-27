@@ -11,23 +11,24 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     # zen-browser.url = "github:MarceColl/zen-browser-flake";
+    anyrun = {
+      url = "github:Kirottu/anyrun";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
   };
 
-  outputs = { self, nixpkgs, home-manager, ... }@inputs: {
+  outputs = { self, nixpkgs, home-manager, anyrun, ... }@inputs: {
     nixosConfigurations = {
       nixos = let
         username = "hanasaki";
-        specialArgs = { inherit username; };
+        specialArgs = { inherit username anyrun; };
       in nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         inherit specialArgs;
-        # specialArgs = { inherit inputs username; };
         modules = [
           ./hosts/nixos
           ./users/${username}/nixos.nix
-          # ./hw-configuration.nix
-          # ./configuration.nix
-          # ./fonts.nix
           home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;

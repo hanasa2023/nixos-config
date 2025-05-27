@@ -1,184 +1,162 @@
 @import "mocha.css";
 
 * {
-  font-family: "Maple Mono";
-  font-size: 17px;
-  min-height: 0;
+  /* https://docs.gtk.org/gtk3/css-overview.html#colors */
+  color: @text;
+  font-family: "JetBrainsMono Nerd Font";
+  font-size: 12pt;
+  font-weight: bold;
+  border-radius: 8px;
+  transition-property: background-color;
+  transition-duration: 0.5s;
 }
-
-#waybar {
-  background: transparent;
-  color: @Maroon;
-  margin: 5px 5px;
+@keyframes blink_red {
+  to {
+    background-color: rgb(242, 143, 173);
+    color: rgb(26, 24, 38);
+  }
 }
-
+.warning,
+.critical,
+.urgent {
+  animation-name: blink_red;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+window#waybar {
+  background-color: transparent;
+  border: 2px solid alpha(@crust, 0.3);
+}
+window > box {
+  margin-left: 5px;
+  margin-right: 5px;
+  margin-top: 5px;
+  background-color: shade(@base, 0.9);
+  padding: 3px;
+  padding-left: 8px;
+  border: 2px none #33ccff;
+}
 #workspaces {
-  border-radius: 1rem;
-  margin: 5px;
-  background-color: @surface0;
-  margin-left: 1rem;
+  padding-left: 0px;
+  padding-right: 4px;
 }
 #workspaces button {
-  color: @text;
-  padding: 0 0.5rem;
-  background-color: @surface0;
-  margin: 0.25rem;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 6px;
+  padding-right: 6px;
 }
-
-#workspaces button.empty {
-  color: @overlay0;
-}
-
-#workspaces button.visible {
-  color: @sky;
-}
-
 #workspaces button.active {
-  color: @green;
+  background-color: rgb(181, 232, 224);
+  color: rgb(26, 24, 38);
 }
-
 #workspaces button.urgent {
-  background-color: @red;
-  color: @text;
-  border-radius: 1rem;
+  color: rgb(26, 24, 38);
 }
-
 #workspaces button:hover {
-  color: @sapphire;
-  border-radius: 1rem;
+  background-color: rgb(248, 189, 150);
+  color: rgb(26, 24, 38);
 }
-
-#window,
-#custom-music,
-#custom-wallchange,
-#idle_inhibitor,
-#tray,
-#backlight,
+tooltip {
+  background: rgb(48, 45, 65);
+}
+tooltip label {
+  color: rgb(217, 224, 238);
+}
+#custom-launcher {
+  font-size: 20px;
+  padding-left: 8px;
+  padding-right: 6px;
+  color: #7ebae4;
+}
+#mode,
 #clock,
-#battery,
-#pulseaudio,
-#language,
-#cpu,
 #memory,
-#custom-gpuinfo,
+#temperature,
+#cpu,
+#mpd,
+#custom-wall,
+#temperature,
+#backlight,
+#pulseaudio,
 #network,
-#custom-icon,
-#custom-lock,
-#custom-power {
-  background-color: @surface0;
-  padding: 0.5rem 1rem;
-  margin: 5px 0;
+#battery,
+#custom-powermenu {
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
-#window {
-  color: @lavender;
-  border-radius: 1rem;
+/* #mode { */
+/* 	margin-left: 10px; */
+/* 	background-color: rgb(248, 189, 150); */
+/*     color: rgb(26, 24, 38); */
+/* } */
+#memory {
+  color: rgb(181, 232, 224);
 }
-
-window#waybar.empty #window {
-  background-color: transparent;
+#cpu {
+  color: rgb(245, 194, 231);
 }
-
-#custom-icon {
-  color: @sapphire;
-  border-radius: 1rem;
-  margin-left: 1rem;
-}
-
-#custom-wallchange {
-  color: @red;
-  border-radius: 1rem;
-  margin-right: 0.5rem;
+#clock {
+  color: rgb(217, 224, 238);
 }
 
 #idle_inhibitor {
-  color: @sapphire;
-  border-radius: 1rem;
-  margin-left: 1rem;
+  color: rgb(221, 182, 242);
+  padding-right: 8px;
 }
-
-#idle_inhibitor.activated {
-  color: @green;
-}
-
-#clock {
-  color: @sky;
-  border-radius: 1rem;
-  margin-left: 1rem;
-}
-
 #battery {
-  color: @green;
+  min-width: 55px;
+  color: rgb(126, 186, 244);
 }
-
-#battery.charging {
-  color: @green;
+#battery.charging,
+#battery.full,
+#battery.plugged {
+  color: #26a65b;
 }
-
-#battery.warning:not(.charging) {
-  color: @red;
+#battery.critical:not(.charging) {
+  color: #f53c3c;
+  animation-name: blink;
+  animation-duration: 0.5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
 }
-
+#custom-wall {
+  color: #33ccff;
+}
+#temperature {
+  color: rgb(150, 205, 251);
+}
 #backlight {
-  color: @yellow;
-  border-radius: 1rem 0px 0px 1rem;
-  margin-left: 1rem;
+  color: rgb(248, 189, 150);
 }
-
-#battery {
-  border-radius: 0px 1rem 1rem 0px;
-}
-
 #pulseaudio {
-  color: @flamingo;
+  color: rgb(245, 224, 220);
 }
-
-#language {
-  color: @peach;
-  border-radius: 0px 1rem 1rem 0px;
-}
-
-#custom-music {
-  color: @mauve;
-  border-radius: 1rem;
-}
-
-#custom-gpuinfo {
-  color: @red;
-  border-radius: 1rem 0px 0px 1rem;
-  margin-left: 1rem;
-}
-
-#cpu {
-  color: @teal;
-}
-
-#memoy {
-  color: @lavender;
-}
-
 #network {
-  color: @green;
-  border-radius: 1rem;
-  margin-left: 1rem;
+  color: #abe9b3;
 }
-
-#custom-lock {
-  background-color: @yellow;
-  color: @base;
-  border-radius: 1rem;
-  margin-left: 0.5rem;
+#network.disconnected {
+  color: rgb(255, 255, 255);
 }
-
-#custom-power {
-  margin-right: 1rem;
-  margin-left: 0.5rem;
-  border-radius: 1rem;
-  color: @base;
-  background-color: @red;
+#custom-powermenu {
+  color: rgb(242, 143, 173);
+  padding-right: 8px;
 }
-
 #tray {
-  margin-right: 5px;
-  border-radius: 1rem;
+  padding-right: 8px;
+  padding-left: 10px;
+}
+#mpd.paused {
+  color: #414868;
+  font-style: italic;
+}
+#mpd.stopped {
+  background: transparent;
+}
+#mpd {
+  color: #c0caf5;
 }
