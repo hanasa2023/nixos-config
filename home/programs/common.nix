@@ -26,7 +26,6 @@
     duckdb
 
     # editor
-    neovim
     wl-clipboard-rs
 
     # productivity

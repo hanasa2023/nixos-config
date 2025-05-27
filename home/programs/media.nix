@@ -13,6 +13,9 @@
     vdpauinfo
     vulkan-tools
     glxinfo
+    # music player
+    cider
+    go-musicfox
   ];
 
   programs = {

@@ -9,6 +9,8 @@
     hyprlock
     swaybg
     mpc
+    xwayland-satellite
+    xfce.thunar
   ];
 
   programs.anyrun = {
