@@ -5,11 +5,24 @@
     pavucontrol
     playerctl
     pulsemixer
+    cava
     # images
     imv
+    # video
+    libva-utils
+    vdpauinfo
+    vulkan-tools
+    glxinfo
   ];
 
-  programs = { obs-studio.enable = true; };
+  programs = {
+    obs-studio.enable = true;
+    mpv = {
+      enable = true;
+      defaultProfiles = [ "gpu-hq" ];
+      scripts = [ pkgs.mpvScripts.mpris ];
+    };
+  };
 
   services = { playerctld.enable = true; };
 }

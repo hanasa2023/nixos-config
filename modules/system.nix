@@ -76,6 +76,7 @@
     #   tunMode = true;
     #   webui = pkgs.metacubexd;
     # };
+    mpd.enable = true;
     v2raya.enable = true;
     v2ray = {
       enable = true;
@@ -116,6 +117,7 @@
     v2raya
     google-chrome
     # zen-browser.packages.${pkgs.system}.default
+    mpd
   ];
 
   environment.variables = {

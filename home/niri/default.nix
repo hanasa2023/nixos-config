@@ -101,4 +101,9 @@
     source = ./configs/wlogout;
     recursive = true;
   };
+
+  home.file.".config/mpd" = {
+    source = ./configs/mpd;
+    recursive = true;
+  };
 }
