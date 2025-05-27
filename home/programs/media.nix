@@ -1,6 +1,7 @@
 { pkgs, config, ... }: {
   home.packages = with pkgs; [
     # audio controll
+    alsa-utils
     pavucontrol
     playerctl
     pulsemixer

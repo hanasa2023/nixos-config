@@ -27,6 +27,7 @@
 
     # editor
     neovim
+    wl-clipboard-rs
 
     # productivity
     obsidian
