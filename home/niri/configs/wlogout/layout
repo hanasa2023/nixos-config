@@ -1,6 +1,6 @@
 {
     "label" : "lock",
-    "action" : "~/.config/hypr/scripts/lockscreen",
+    "action" : "~/.config/waybar/scripts/lockscreen",
     "text" : "Lock",
     "keybind" : "l"
 }
