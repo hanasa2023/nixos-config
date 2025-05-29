@@ -74,7 +74,7 @@
         "image/jpeg" = [ "imv-dir.desktop" ];
         "image/png" = [ "imv-dir.desktop" ];
         "image/webp" = [ "imv-dir.desktop" ];
-        "inode/directory" = [ "thunar.desktop" ];
+        "inode/directory" = "org.kde.dolphin.desktop";
       };
 
       associations.removed = {

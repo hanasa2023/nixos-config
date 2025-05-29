@@ -6,7 +6,7 @@
     ./common.nix
     ./git.nix
     ./media.nix
-    ./editors.nix
+    ./develop.nix
     ./chat.nix
   ];
 }

@@ -16,3 +16,14 @@ map.set("n", "<leader><cr>", "<cmd>nohl<cr>", { desc = "nohl" })
 map.set({ "i", "x" }, "jj", "<esc>", { desc = "Replace esc" })
 
 map.set("n", "<leader>ce", "<cmd>RunCpp<cr>", { desc = "Run Cpp" })
+
+-- flutter
+map.set("n", "<leader>'r", "<cmd>FlutterRun", { desc = "Run the current project" })
+map.set("n", "<leader>'R", "<cmd>FlutterRestart", { desc = "Restart the current project" })
+map.set("n", "<leader>'hr", "<cmd>FlutterReload", { desc = "Reload the running project." })
+map.set("n", "<leader>'q", "<cmd>FlutterQuit", { desc = "Ends a running session." })
+map.set("n", "<leader>'s", "<cmd>FlutterDevices", { desc = "Brings up a list of connected devices to select from" })
+map.set("n", "<leader>'a", "<cmd>FlutterAttach", { desc = "Attach to a running app" })
+map.set("n", "<leader>'d", "<cmd>FlutterDetach", { desc = "Ends a running session locally" })
+map.set("n", "<leader>'D", "<cmd>FlutterDevTools", { desc = "Starts a Dart Dev Tools server" })
+map.set("n", "<leader>'t", "<cmd>FlutterOutlineToggle", { desc = "Flutter Outline Toggle" })

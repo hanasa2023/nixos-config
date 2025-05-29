@@ -126,6 +126,11 @@
     EDITOR = "nvim";
   };
 
+  programs.nix-ld = {
+    enable = true;
+    libraries = with pkgs; [ stdenv.cc.cc zlib openssl curl ];
+  };
+
   nix.gc = {
     automatic = true;
     dates = "weekly";
