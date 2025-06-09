@@ -8,8 +8,8 @@
   ];
 
   boot.loader = {
-    systemd-boot.configurationLimit = 10;
     grub = {
+      configurationLimit = 10;
       enable = true;
       device = "nodev";
       efiSupport = true;
@@ -26,6 +26,12 @@
     };
   };
 
+  nix.gc = {
+    automatic = true;
+    dates = "weekly";
+    options = "--delete-older-than 7d";
+  };
+
   networking = {
     hostName = "nixos";
     networkmanager.enable = true;
@@ -38,7 +44,7 @@
   };
 
   services.xserver.videoDrivers = [ "nvidia" ];
-  hardware.graphics.enable = true;
+  hardware.graphics = { enable = true; };
   hardware.nvidia = {
     open = true;
     package = config.boot.kernelPackages.nvidiaPackages.stable;
