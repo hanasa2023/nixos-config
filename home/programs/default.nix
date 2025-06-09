@@ -8,5 +8,6 @@
     ./media.nix
     ./develop.nix
     ./chat.nix
+    ./game.nix
   ];
 }

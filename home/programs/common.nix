@@ -1,5 +1,6 @@
 { lib, pkgs, ... }: {
   home.packages = with pkgs; [
+    lxgw-wenkai
     # archives
     unzip
     zstd
@@ -45,6 +46,7 @@
     clippy
 
     gcc
+    clang-tools
   ];
 
   programs.direnv = {
