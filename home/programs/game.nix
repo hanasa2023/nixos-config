@@ -6,6 +6,6 @@
     lutris-unwrapped
     wineWowPackages.stagingFull
     winetricks
-    steam
+    # steam
   ];
 }

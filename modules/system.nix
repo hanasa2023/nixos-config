@@ -128,7 +128,22 @@
 
   programs.nix-ld = {
     enable = true;
-    libraries = with pkgs; [ stdenv.cc.cc zlib openssl curl ];
+    libraries = with pkgs; [
+      zlib
+      zstd
+      stdenv.cc.cc
+      curl
+      openssl
+      attr
+      libssh
+      bzip2
+      libxml2
+      acl
+      libsodium
+      util-linux
+      xz
+      systemd
+    ];
   };
 
   nix.gc = {
