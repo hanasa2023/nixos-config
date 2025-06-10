@@ -15,7 +15,6 @@
       url = "github:Kirottu/anyrun";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
   };
 
   outputs = { self, nixpkgs, home-manager, anyrun, ... }@inputs: {
@@ -34,6 +33,7 @@
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
             home-manager.extraSpecialArgs = inputs // specialArgs;
+            home-manager.backupFileExtension = "backup";
             home-manager.users.${username} =
               import ./users/${username}/home.nix;
           }

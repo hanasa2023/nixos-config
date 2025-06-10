@@ -1,6 +1,7 @@
 { pkgs, lib, username, ... }:
 
 {
+  nixpkgs = { config.allowUnfree = true; };
   users.users.${username} = {
     isNormalUser = true;
     home = "/home/${username}";
@@ -37,7 +38,6 @@
 
   # nixpkgs.config.allowUnfreePredicate = pkg:
   #   builtins.elem (lib.getName pkg) [ "google-chrome" ];
-  nixpkgs.config.allowUnfree = true;
 
   time.timeZone = "Asia/Shanghai";
 
