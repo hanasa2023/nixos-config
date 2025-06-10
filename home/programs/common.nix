@@ -71,6 +71,7 @@ in {
     patchednodejs
     node-gyp
     yarn
+    pnpm
 
     patchedpython
     uv
