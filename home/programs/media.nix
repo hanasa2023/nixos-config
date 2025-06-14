@@ -8,6 +8,7 @@
     cava
     # images
     imv
+    snipaste
     # video
     libva-utils
     vdpauinfo
