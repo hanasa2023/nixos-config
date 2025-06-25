@@ -1,5 +1,5 @@
 { pkgs, config, ... }:
 
 {
-  home.packages = with pkgs; [ google-chrome firefox ];
+  home.packages = with pkgs; [ google-chrome firefox vivaldi ];
 }
