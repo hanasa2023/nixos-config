@@ -6,6 +6,7 @@
     lutris-unwrapped
     wineWowPackages.stagingFull
     winetricks
+    waydroid
     # steam
   ];
 }

@@ -124,6 +124,7 @@
     RUSTUP_DIST_SERVER = "https://rsproxy.cn";
     RUSTUP_UPDATE_ROOT = "https://rsproxy.cn/rustup";
     EDITOR = "nvim";
+    ANDROID_AVD_HOME = "/home/hanasaki/.config/.android/avd";
   };
 
   programs.nix-ld = {
@@ -143,6 +144,20 @@
       util-linux
       xz
       systemd
+      libglvnd
+      vulkan-loader
+      libxkbcommon
+      libdrm
+      mesa
+      xorg.libX11
+      xorg.libXext
+      xorg.libXdamage
+      xorg.libXfixes
+      xorg.libXcursor
+      xorg.libXrandr
+      xorg.libXinerama
+      xorg.libxkbfile
+      xorg.libxcb
     ];
   };
 
